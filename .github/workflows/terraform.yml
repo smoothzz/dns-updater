@@ -3,7 +3,8 @@ name: 'Terraform'
 on:
   push:
     branches: [ "main" ]
-  pull_request:
+  schedule:
+  - cron: "0 */6 * * *"
 
 permissions:
   contents: read
