@@ -26,7 +26,7 @@ resource "cloudflare_record" "k8s" {
   ttl     = 3600
 }
 
-resource "cloudflare_record" "k8s" {
+resource "cloudflare_record" "nginx" {
   zone_id = var.zone_id
   name    = "nginx"
   value   = "${data.external.myipaddr.result.ip}"
