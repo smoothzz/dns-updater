@@ -25,3 +25,11 @@ resource "cloudflare_record" "k8s" {
   type    = "A"
   ttl     = 3600
 }
+
+resource "cloudflare_record" "k8s" {
+  zone_id = var.zone_id
+  name    = "nginx"
+  value   = "${data.external.myipaddr.result.ip}"
+  type    = "A"
+  ttl     = 3600
+}
