@@ -33,3 +33,11 @@ resource "cloudflare_record" "nginx" {
   type    = "A"
   ttl     = 3600
 }
+
+resource "cloudflare_record" "rdp" {
+  zone_id = var.zone_id
+  name    = "rdp"
+  value   = "${data.external.myipaddr.result.ip}"
+  type    = "A"
+  ttl     = 3600
+}
