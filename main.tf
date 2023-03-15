@@ -41,3 +41,12 @@ resource "cloudflare_record" "rdp" {
   type    = "A"
   ttl     = 3600
 }
+
+resource "cloudflare_record" "api" {
+  zone_id = var.zone_id
+  name    = "api"
+  value   = "${data.external.myipaddr.result.ip}"
+  type    = "A"
+  ttl     = 3600
+}
+
